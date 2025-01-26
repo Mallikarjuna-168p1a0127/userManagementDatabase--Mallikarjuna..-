@@ -1,0 +1,44 @@
+### Register User
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "department": "IT",
+    "password": "password123"
+}
+
+### Login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "john.doe@example.com",
+    "password": "password123"
+}
+
+### Get All Users (Requires JWT Token)
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczNzg5NTc0NSwiZXhwIjoxNzM3ODk5MzQ1fQ.ETg8p0WPPCDxyEXVj25PgbABCPtgo5hnhG34bRC1s5k
+
+### Get Single User (Requires JWT Token)
+GET http://localhost:3000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczNzg5NTc0NSwiZXhwIjoxNzM3ODk5MzQ1fQ.ETg8p0WPPCDxyEXVj25PgbABCPtgo5hnhG34bRC1s5k
+
+### Update User (Requires JWT Token)
+PUT http://localhost:3000/users/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczNzg5NTc0NSwiZXhwIjoxNzM3ODk5MzQ1fQ.ETg8p0WPPCDxyEXVj25PgbABCPtgo5hnhG34bRC1s5k
+
+{
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john.smith@example.com",
+    "department": "HR"
+}
+
+### Delete User (Requires JWT Token)
+DELETE http://localhost:3000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczNzg5NTc0NSwiZXhwIjoxNzM3ODk5MzQ1fQ.ETg8p0WPPCDxyEXVj25PgbABCPtgo5hnhG34bRC1s5k
